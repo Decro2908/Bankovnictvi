@@ -1,31 +1,257 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
   text-align: center;
+  margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.transaction-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.transaction-form button:hover {
+  background-color: #0056b3;
+}
+
+.transaction-type-selector {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.transaction-type-selector button {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.transaction-type-selector button:hover {
+  background-color: #ccc;
+}
+
+.transaction-type-selector .prijmecky {
+  background-color: #28a745;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.transaction-type-selector .prijmecky:hover {
+  background-color: #218838;
 }
 
-.heart {
-  color: #ff0000;
+.transaction-type-selector .vydajecky {
+  background-color: #dc3545;
+  color: white;
 }
 
-.small {
-  font-size: 0.75rem;
+.transaction-type-selector .vydajecky:hover {
+  background-color: #c82333;
+}
+
+.inputos {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.vat-calculator,
+.currency-converter,
+.filter-transactions {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vat-calculator button,
+.currency-converter button,
+.filter-transactions button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.vat-calculator button:hover,
+.currency-converter button:hover,
+.filter-transactions button:hover {
+  background-color: #0056b3;
+}
+
+.conversion-result,
+.vat-result {
+  margin-top: 20px;
+}
+
+.conversion-result p,
+.vat-result p {
+  margin: 0;
+}
+
+.currency-text {
+  margin: 0 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .transactions {
+    flex-direction: column;
+  }
+  .transaction-group {
+    width: 100%;
+  }
+}
+
+.sort-button {
+  background-color: rgb(58, 207, 58);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+.sort-button:hover {
+  background-color: green;
+}
+
+
+.sort-button.active {
+  background-color: #dc3545;
+}
+
+.sort-button.active:hover {
+  background-color: #c82333;
+}
+
+.currency-converter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.currency-converter > div {
+  display: flex;
+  align-items: center;
+}
+
+.currency-converter select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.currency-converter input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.currency-text {
+  font-size: 16px;
+}
+
+.transaction-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.transaction-form select {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.transaction-form select.prijem {
+  background-color: #28a745;
+  color: white;
+}
+
+.transaction-form select.vydaj {
+  background-color: #dc3545;
+  color: white;
+}
+
+.transaction-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.transaction-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.transaction-form button:hover {
+  background-color: #0056b3;
+}
+.dph {
+  width: calc(33.33% - 8px);
+  padding: 10px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.spocitat {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.spocitat:hover {
+  background-color: #0056b3;
 }
